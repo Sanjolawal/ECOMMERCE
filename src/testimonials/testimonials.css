@@ -1,0 +1,58 @@
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  margin-top: 33px;
+}
+.testimonials .container1 {
+  display: grid;
+  justify-items: center;
+  padding-bottom: 30px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  border-radius: 14px;
+  margin: 15px 0;
+}
+.testimonials .avatar {
+  width: 28%;
+  border-radius: 50%;
+  margin: 15px 0;
+}
+.testimonials .p {
+  text-align: center;
+  margin: 3px 0;
+  font-size: 17px;
+}
+.p:nth-child(5) {
+  padding: 0 26px;
+}
+.testimonials .h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 23px;
+}
+.testimonials .cube {
+  font-size: 70px;
+  color: rgb(255, 146, 153);
+  margin: 10px 0;
+}
+
+@media all and (max-width: 1200px) {
+  .testimonials .container1 {
+    margin: 15px 2%;
+  }
+  .testimonials .avatar {
+    width: 24%;
+  }
+}
+@media all and (max-width: 850px) {
+  .testimonials .container1 {
+    margin: 15px 2%;
+  }
+  .testimonials .avatar {
+    width: 18%;
+  }
+}
+@media all and (max-width: 550px) {
+  .testimonials {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,39 @@
+.mobileNavbar {
+  display: none;
+}
+
+@media all and (max-width: 750px) {
+  .mobileNavbar {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background: white;
+    width: 104%;
+    margin: 0 0 0 -2%;
+    padding: 8px 0;
+    column-gap: 60px;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.3);
+  }
+  .mobileNavbar .a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: black;
+  }
+  .mobileNavbar .sup {
+    display: flex;
+    align-self: start;
+    background: rgb(255, 143, 156);
+    border-radius: 50%;
+    padding: 0 6px;
+    width: fit-content;
+    margin: 0 0 26px 0;
+    color: white;
+    font-weight: bold;
+  }
+  .mobileIcon {
+    font-size: 30px;
+    cursor: pointer;
+  }
+}

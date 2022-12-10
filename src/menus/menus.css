@@ -1,0 +1,40 @@
+.menus {
+  display: flex;
+  column-gap: 40px;
+  font-weight: 600;
+  color: rgb(0, 0, 0, 0.75);
+  justify-content: center;
+  padding: 20px 0;
+}
+.menus a {
+  text-decoration: none;
+  color: rgb(0, 0, 0, 0.6);
+}
+.menus a:hover {
+  color: rgb(255, 146, 153);
+  border-bottom: 4px solid rgb(255, 146, 153);
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+.menus .active {
+  color: rgb(255, 146, 153);
+  border-bottom: 4px solid rgb(255, 146, 153);
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+@media all and (max-width: 1100px) {
+  .menus {
+    column-gap: 20px;
+  }
+}
+@media all and (max-width: 900px) {
+  .menus {
+    column-gap: 12px;
+  }
+}
+@media all and (max-width: 750px) {
+  .menus {
+    display: none;
+  }
+}

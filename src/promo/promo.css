@@ -1,0 +1,36 @@
+.promo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  color: rgb(0, 0, 0, 0.65);
+}
+.promo .icons {
+  display: flex;
+  column-gap: 5px;
+}
+.media {
+  font-size: 24px;
+  cursor: pointer;
+}
+.media:hover {
+  color: rgb(255, 143, 156);
+}
+.promo .third {
+  display: flex;
+  column-gap: 20px;
+}
+.promo .opt {
+  border: none;
+  color: rgb(0, 0, 0, 0.65);
+}
+
+@media all and (max-width: 750px) {
+  .promo .icons {
+    display: none;
+  }
+  .promo .opt {
+    display: none;
+  }
+}

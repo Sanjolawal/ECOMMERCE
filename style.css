@@ -1,0 +1,57 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0 30% 0 30%;
+  box-sizing: border-box;
+}
+footer {
+  width: 253%;
+  margin: 30px -78% 0 -78%;
+}
+
+@media all and (max-width: 2500px) {
+  body {
+    padding: 0 20% 0 20%;
+  }
+  footer {
+    width: 167.3%;
+    margin: 30px -34% 0 -34%;
+  }
+}
+@media all and (max-width: 2000px) {
+  body {
+    padding: 0 13% 0 13%;
+  }
+  footer {
+    width: 135.6%;
+    margin: 30px -18% 0 -18%;
+  }
+}
+@media all and (max-width: 1600px) {
+  body {
+    padding: 0 6% 0 6%;
+  }
+  footer {
+    margin: 30px -8% 0 -8%;
+    width: 114.8%;
+  }
+}
+@media all and (max-width: 1000px) {
+  body {
+    padding: 0 4% 0 4%;
+  }
+  footer {
+    margin: 30px -6% 0 -6%;
+    width: 110.3%;
+  }
+}
+@media all and (max-width: 750px) {
+  body {
+    padding: 0 2% 0 2%;
+    overflow-x: hidden;
+  }
+  footer {
+    margin: 30px -4% 0 -4%;
+    width: 106%;
+  }
+}

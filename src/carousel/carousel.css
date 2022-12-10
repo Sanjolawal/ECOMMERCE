@@ -1,0 +1,148 @@
+.swipeCon .img {
+  width: 100%;
+}
+
+.swipeCon {
+  position: relative;
+}
+
+.caroCon {
+  position: absolute;
+  display: grid;
+  flex-direction: column;
+  justify-items: start;
+  width: 33%;
+  left: 8vw;
+}
+.caroCon .h1,
+.caroCon .p {
+  margin: 7px 0;
+  text-align: start;
+  font-size: 48px;
+}
+.caroCon .h1 {
+  line-height: 44px;
+}
+.caroCon .p {
+  font-size: 32px;
+  color: rgb(255, 143, 156);
+}
+.p:nth-child(3) {
+  color: rgb(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+.caroCon .btn {
+  width: fit-content;
+  background: rgb(255, 143, 156);
+  margin: 10px 0;
+  color: white;
+  font-size: 21px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 14px 24px;
+  cursor: pointer;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swipeCon .img {
+  background-size: cover;
+}
+
+@media all and (max-width: 1150px) {
+  .caroCon {
+    width: 40%;
+    margin: 24px 0;
+  }
+}
+@media all and (max-width: 1000px) {
+  .swipeCon .img {
+    width: 115%;
+  }
+
+  .caroCon .h1,
+  .caroCon .p {
+    margin: 5px 0;
+    text-align: start;
+    font-size: 32px;
+  }
+  .caroCon .h1 {
+    line-height: 34px;
+  }
+  .caroCon .p {
+    font-size: 22px;
+    color: rgb(255, 143, 156);
+  }
+  .p:nth-child(3) {
+    color: rgb(0, 0, 0, 0.6);
+    font-weight: bold;
+  }
+  .caroCon .btn {
+    font-size: 17px;
+    padding: 10px;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .swiper {
+    margin-top: 40px;
+  }
+  .caroCon {
+    width: 50%;
+    margin: 24px 0;
+  }
+}
+@media all and (max-width: 600px) {
+  .swipeCon .img {
+    width: 135%;
+  }
+
+  .caroCon {
+    background: rgb(255, 255, 255, 0.8);
+    padding-left: 4vw;
+    width: 65%;
+    border-radius: 10px;
+  }
+  .caroCon .h1 {
+    line-height: 26px;
+    font-size: 24px;
+  }
+  .caroCon .p {
+    font-size: 16px;
+  }
+
+  .caroCon .btn {
+    font-size: 14px;
+  }
+}

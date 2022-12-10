@@ -1,0 +1,57 @@
+.promoImg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner {
+  width: 100%;
+  border-radius: 13px;
+}
+.test {
+  position: absolute;
+  background: rgb(255, 255, 255, 0.8);
+  display: grid;
+  justify-items: center;
+  padding: 15px 0;
+  border-radius: 8px;
+}
+.test .btn {
+  width: fit-content;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  padding: 6px 16px;
+  cursor: pointer;
+}
+.test .h1 {
+  margin: 0;
+  padding: 0 30px;
+}
+.test .p,
+.test a {
+  margin: 0;
+  text-decoration: none;
+  color: black;
+  padding-bottom: 10px;
+}
+.test a {
+  font-weight: 800;
+  font-size: 25px;
+}
+.test a:hover {
+  font-weight: 400;
+}
+
+@media all and (max-width: 850px) {
+  .promoImg {
+    margin: 32px 2%;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .test .h1 {
+    font-size: 24px;
+    margin: 7px 0;
+  }
+}
