@@ -31,7 +31,7 @@
     background: white;
     z-index: 100;
     margin: 0 0 0 -2%;
-    padding: 0 0 483px 5%;
+    padding: 0 0 600px 5%;
   }
   .second {
     background: rgb(0, 0, 0, 0.55);
@@ -51,7 +51,7 @@
     top: 0;
     right: 0;
     width: 35%;
-    height: 950px;
+    height: 1200px;
     z-index: 100;
     cursor: pointer;
   }
