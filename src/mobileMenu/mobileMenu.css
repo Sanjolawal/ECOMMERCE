@@ -20,7 +20,7 @@
     width: 60%;
     background: white;
     z-index: 100;
-    padding: 0 0 283px 5%;
+    padding: 0 0 600px 5%;
   }
   .mobileMenu2 {
     display: grid;
@@ -39,7 +39,7 @@
     top: 0;
     right: 0;
     width: 35%;
-    height: 950px;
+    height: 1200px;
     z-index: 100;
     cursor: pointer;
     display: grid;
