@@ -9,7 +9,7 @@ const Promo = () => {
         <ion-icon name="logo-twitter" class="media"></ion-icon>
         <ion-icon name="logo-instagram" class="media"></ion-icon>
       </div>
-      <p className="p">FREE SHIPPING THIS WEEK ORDER OVER - $55</p>
+      <p className="p ">FREE SHIPPING THIS WEEK ORDER OVER - $55</p>
       <div className="third">
         <select name="" id="" className="opt">
           <option value="">USD $</option>

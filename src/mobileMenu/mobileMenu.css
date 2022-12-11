@@ -1,0 +1,86 @@
+.mobileMenu {
+  display: none;
+}
+.second {
+  display: none;
+}
+.mobileMenu2 {
+  display: none;
+}
+.second2 {
+  display: none;
+}
+
+@media all and (max-width: 750px) {
+  .mobileMenu {
+    display: grid;
+    row-gap: 10px;
+    position: fixed;
+    top: 0;
+    width: 60%;
+    background: white;
+    z-index: 100;
+    padding: 0 0 283px 5%;
+  }
+  .mobileMenu2 {
+    display: grid;
+    row-gap: 10px;
+    position: fixed;
+    top: 0;
+    width: 60%;
+    background: white;
+    z-index: 100;
+    margin: 0 0 0 -2%;
+    padding: 0 0 483px 5%;
+  }
+  .second {
+    background: rgb(0, 0, 0, 0.55);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 950px;
+    z-index: 100;
+    cursor: pointer;
+    display: grid;
+  }
+  .second2 {
+    display: grid;
+    background: rgb(0, 0, 0, 0.55);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 950px;
+    z-index: 100;
+    cursor: pointer;
+  }
+  .mobileMenu2 .h1,
+  .mobileMenu .h1 {
+    color: rgb(255, 143, 156);
+    margin: 16px 0 0 24px;
+  }
+  .mobileMenu2 a,
+  .mobileMenu a {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    margin: 10px 36px 0 0%;
+    padding-bottom: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(0, 0, 0, 0.6);
+    font-weight: bold;
+  }
+  .mobileMenu2 a:hover,
+  .mobileMenu a:hover {
+    color: rgb(255, 146, 153);
+    border-bottom: 4px solid rgb(255, 146, 153);
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
+  .mobileMenu2 .active,
+  .mobileMenu .active {
+    color: rgb(255, 146, 153);
+    border-bottom: 4px solid rgb(255, 146, 153);
+    padding-bottom: 5px;
+  }
+}
