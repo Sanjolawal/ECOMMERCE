@@ -9,6 +9,8 @@
 .menus a {
   text-decoration: none;
   color: rgb(0, 0, 0, 0.6);
+  border-bottom: 4px solid transparent;
+  padding-bottom: 5px;
 }
 .menus a:hover {
   color: rgb(255, 146, 153);

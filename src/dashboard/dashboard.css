@@ -1,0 +1,23 @@
+.dashboard .container {
+  display: grid;
+  grid-template-columns: repeat(1, 22% 51% 22%);
+  column-gap: 2%;
+  box-sizing: border-box;
+  margin: 55px 0 70px 0;
+}
+
+@media all and (max-width: 1300px) {
+  .dashboard .container {
+    grid-template-columns: repeat(2, 50%);
+    justify-items: center;
+  }
+  .dashboard .container :last-child {
+    grid-column: 1 / -1;
+  }
+}
+@media all and (max-width: 850px) {
+  .dashboard .container {
+    grid-template-columns: repeat(1, 100%);
+    justify-items: center;
+  }
+}

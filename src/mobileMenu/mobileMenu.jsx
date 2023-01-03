@@ -1,8 +1,20 @@
 import "./mobileMenu.css";
 import { NavLink } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 const Mobilemenu = (props) => {
   const { name, state } = props;
+  const remove = useRef();
+
+  useEffect(() => {
+    if (location.pathname === `/dashboard`) {
+      remove.current.style.display = `none`;
+    } else {
+      remove.current.style.display = `block`;
+    }
+    return () => {};
+  });
+
   return (
     <div>
       <div
@@ -25,22 +37,31 @@ const Mobilemenu = (props) => {
         <NavLink
           to="/login"
           title="Login"
-          className="animate__animated animate__pulse animate__infinite"
+          className={
+            location.pathname === `/dashboard`
+              ? ``
+              : `animate__animated animate__heartBeat animate__infinite`
+          }
           onClick={() => {
             name();
           }}
         >
-          LOGIN
+          {location.pathname === `/dashboard` ? `LOGOUT` : `LOGIN`}
         </NavLink>
         <NavLink
           to="/login"
           title="Signup"
-          className="animate__animated animate__pulse animate__infinite"
+          className={
+            location.pathname === `/dashboard`
+              ? ``
+              : `animate__animated animate__heartBeat animate__infinite`
+          }
           onClick={() => {
             name();
           }}
+          ref={remove}
         >
-          SIGNUP
+          {location.pathname === `/dashboard` ? `` : `SIGNUP`}
         </NavLink>
         <a title="Categories">CATEGORIES</a>
         <a title="Mens's">MEN'S</a>
