@@ -91,3 +91,15 @@
 .time .h6 {
   font-weight: 300;
 }
+
+@media all and (max-width: 1100px) {
+  .dealoftheDay .mySwiper {
+    width: 95%;
+  }
+}
+@media all and (max-width: 900px) {
+ .dealDay {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+}
+}
