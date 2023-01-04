@@ -6,6 +6,12 @@ import Smpromo from "../summerpromo/smpromo";
 import Testimonial from "../testimonials/testimonials";
 import Carousel from "../carousel/carousel";
 import Header from "../header/header";
+import Blog from "../blog/blog";
+import BestSellers from "../bestSellers/bestSellers";
+import Newproduct from "../newproduct/newproduct";
+// import Toprated from "../toprated/toprated";
+import Trending from "../trending/trending";
+import Dealoftheday from "../dealOfTheDay/dealoftheday";
 import "./dashboard.css";
 
 const Dashboard = () => {
@@ -15,11 +21,18 @@ const Dashboard = () => {
       <Header />
       <Menus />
       <Carousel />
+      <div className="products">
+        <BestSellers />
+        <Newproduct />
+        <Trending />
+      </div>
+      <Dealoftheday />
       <div className="container">
         <Testimonial />
         <Smpromo />
         <Services />
       </div>
+      <Blog />
     </div>
   );
 };

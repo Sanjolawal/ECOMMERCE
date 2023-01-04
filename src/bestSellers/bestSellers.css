@@ -1,0 +1,36 @@
+.bestSeller .h3 {
+  opacity: 0.8;
+}
+.bestSeller .info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  column-gap: 14px;
+}
+.info .img {
+  width: 22%;
+  border-radius: 12px;
+}
+.bestSeller .moreInfo {
+}
+.moreInfo .p {
+  margin: 0;
+}
+.moreInfo .star {
+  color: goldenrod;
+}
+.moreInfo .star:nth-child(6) {
+  /* color: grey; */
+}
+.moreInfo .prices {
+  margin: 0;
+}
+.bestSeller .price {
+  text-decoration: line-through;
+  opacity: 0.7;
+  margin-right: 12px;
+  font-weight: 300;
+}
+.bestSeller .prices {
+  font-weight: bold;
+}

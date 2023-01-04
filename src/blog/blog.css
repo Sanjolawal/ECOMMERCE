@@ -1,0 +1,36 @@
+.blogCon {
+  display: grid;
+  grid-template-columns: repeat(4, 23.2%);
+  column-gap: 2%;
+}
+.eachImg .img {
+  width: 100%;
+  border-radius: 15px;
+}
+.eachImg .h4 {
+  margin: 16px 0 4px 0;
+  color: rgb(255, 157, 168);
+  font-weight: 500;
+}
+
+.eachImg .h3 {
+  margin: 0;
+}
+.eachImg .p {
+  margin: 7px 0 0 0;
+  opacity: 0.7;
+}
+@media all and (max-width: 1200px) {
+  .blogCon {
+    grid-template-columns: repeat(2, 46.4%);
+    column-gap: 4%;
+    row-gap: 30px;
+    margin-left: 20px;
+  }
+}
+@media all and (max-width: 750px) {
+  .blogCon {
+    grid-template-columns: repeat(1, 98%);
+    margin-left: 10px;
+  }
+}

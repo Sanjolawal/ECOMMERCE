@@ -4,27 +4,35 @@
     "purpose": "Clothes",
     "writeUp": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "price": "$50.00",
-    "actualPrice": "$12.00"
+    "actualPrice": "$12.00",
+    "image": "https://codewithsadee.github.io/anon-ecommerce-website/assets/images/products/shorts-2.jpg",
+    "id": 1
   },
   {
     "name": "Girls Pnk Embro Design Top",
     "purpose": "Clothes",
     "writeUp": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "price": "$60.00",
-    "actualPrice": "$9.00"
+    "actualPrice": "$9.00",
+    "image": "https://codewithsadee.github.io/anon-ecommerce-website/assets/images/products/watch-2.jpg",
+    "id": 2
   },
   {
     "name": "Black Floral Wrap Midi Skirt",
     "purpose": "Clothes",
     "writeUp": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "price": "$76.00",
-    "actualPrice": "$25.00"
+    "actualPrice": "$25.00",
+    "image": "https://codewithsadee.github.io/anon-ecommerce-website/assets/images/products/party-wear-2.jpg",
+    "id": 3
   },
   {
     "name": "Pure Garment Dyed Cotton Shirt",
     "purpose": "Men's fashion",
     "writeUp": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "price": "$68.00",
-    "actualPrice": "$30.00"
+    "actualPrice": "$30.00",
+    "image": "https://codewithsadee.github.io/anon-ecommerce-website/assets/images/products/clothes-4.jpg",
+    "id": 4
   }
 ]

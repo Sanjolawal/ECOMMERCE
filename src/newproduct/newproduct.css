@@ -1,0 +1,36 @@
+.newProducts .h3 {
+  opacity: 0.8;
+}
+.newProducts .info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  column-gap: 14px;
+}
+.newProducts .img {
+  width: 24%;
+  border-radius: 12px;
+}
+.newProducts .moreInfo {
+}
+.moreInfo .p {
+  margin: 0;
+}
+.moreInfo .star {
+  color: goldenrod;
+}
+.moreInfo .star:nth-child(6) {
+  /* color: grey; */
+}
+.moreInfo .prices {
+  margin: 0;
+}
+.newProducts .price {
+  text-decoration: line-through;
+  opacity: 0.7;
+  margin-right: 12px;
+  font-weight: 300;
+}
+.newProducts .prices {
+  font-weight: bold;
+}

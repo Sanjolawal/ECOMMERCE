@@ -5,6 +5,12 @@
   box-sizing: border-box;
   margin: 55px 0 70px 0;
 }
+.products {
+  display: grid;
+  grid-template-columns: repeat(1, 30% 30% 30%);
+  margin-top: 34px;
+  width: 100%;
+}
 
 @media all and (max-width: 1300px) {
   .dashboard .container {
@@ -14,10 +20,18 @@
   .dashboard .container :last-child {
     grid-column: 1 / -1;
   }
+  .products {
+    grid-template-columns: repeat(1, 45% 45%);
+  }
 }
 @media all and (max-width: 850px) {
   .dashboard .container {
     grid-template-columns: repeat(1, 100%);
     justify-items: center;
+  }
+}
+@media all and (max-width: 750px) {
+  .products {
+    grid-template-columns: repeat(1, 90%);
   }
 }

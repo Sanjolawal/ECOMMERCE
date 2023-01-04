@@ -1,0 +1,47 @@
+.trending {
+  margin-left: 100px;
+  width: 100%;
+}
+
+.trending .h3 {
+  opacity: 0.8;
+}
+.trending .info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  column-gap: 14px;
+}
+.trending .img {
+  width: 24%;
+  border-radius: 12px;
+}
+.trending .moreInfo {
+}
+.moreInfo .p {
+  margin: 0;
+}
+.moreInfo .star {
+  color: goldenrod;
+}
+.moreInfo .star:nth-child(6) {
+  /* color: grey; */
+}
+.moreInfo .prices {
+  margin: 0;
+}
+.trending .price {
+  text-decoration: line-through;
+  opacity: 0.7;
+  margin-right: 12px;
+  font-weight: 300;
+}
+.trending .prices {
+  font-weight: bold;
+}
+
+@media all and (max-width:1300px) {
+  .trending {
+    margin-left: 0;
+  }
+}

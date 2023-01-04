@@ -5,8 +5,8 @@ import "./carousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -30,11 +30,15 @@ const Carousel = () => {
             <p className="p">Trending Item </p>
             <h1 className="h1">WOMEN'S LATEST FASHION SALE</h1>
             <p className="p">starting at $ 20.00</p>
-            <button className="btn animate__animated animate__headShake animate__infinite">
+            <button
+              className="btn animate__animated animate__headShake animate__infinite"
+              onClick={() => {
+                window.open(`https://wa.link/hn7dp7`, `_blank`);
+              }}
+            >
               SHOP NOW
             </button>
           </div>
-          
         </SwiperSlide>
         <SwiperSlide className="swipeCon">
           <img src={carousel2} alt="carousel" className="img" />
@@ -42,7 +46,12 @@ const Carousel = () => {
             <p className="p">Trending Accessories </p>
             <h1 className="h1">MODERN SUNGLASSES </h1>
             <p className="p">starting at $ 15.00</p>
-            <button className="btn animate__animated animate__shakeY animate__infinite">
+            <button
+              className="btn animate__animated animate__shakeY animate__infinite"
+              onClick={() => {
+                window.open(`https://wa.link/hn7dp7`, `_blank`);
+              }}
+            >
               SHOP NOW
             </button>
           </div>
@@ -53,7 +62,12 @@ const Carousel = () => {
             <p className="p">Sale Offer </p>
             <h1 className="h1"> NEW FASHION SUMMER SALE </h1>
             <p className="p"> starting at $ 29.99</p>
-            <button className="btn animate__animated animate__headShake animate__infinite">
+            <button
+              className="btn animate__animated animate__headShake animate__infinite"
+              onClick={() => {
+                window.open(`https://wa.link/hn7dp7`, `_blank`);
+              }}
+            >
               SHOP NOW
             </button>
           </div>
