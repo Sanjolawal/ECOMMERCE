@@ -12,6 +12,7 @@ import Newproduct from "../newproduct/newproduct";
 // import Toprated from "../toprated/toprated";
 import Trending from "../trending/trending";
 import Dealoftheday from "../dealOfTheDay/dealoftheday";
+import Footer from "../footer/footer";
 import "./dashboard.css";
 
 const Dashboard = () => {
@@ -33,6 +34,7 @@ const Dashboard = () => {
         <Services />
       </div>
       <Blog />
+      <Footer />
     </div>
   );
 };

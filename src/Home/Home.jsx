@@ -4,6 +4,7 @@ import Services from "../services/services";
 import Smpromo from "../summerpromo/smpromo";
 import Testimonial from "../testimonials/testimonials";
 import Carousel from "../carousel/carousel";
+import Footer from "../footer/footer";
 
 import "./Home.css";
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
         <Smpromo />
         <Services />
       </div>
+      <Footer />
     </div>
   );
 };

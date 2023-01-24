@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./signup/login";
 import Home from "./Home/Home";
-import Footer from "./footer/footer";
 import MobileNavbar from "./mobileNavbar/mobileNavbar";
 import Mobilemenu from "./mobileMenu/mobileMenu";
 import { useState } from "react";
 import Dashboard from "./dashboard/dashboard";
+import Error from "./Error/error";
 
 function App() {
   const [first, setfirst] = useState(false);
@@ -21,8 +21,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
       <MobileNavbar name={changeState} state={first} />
     </div>
   );
