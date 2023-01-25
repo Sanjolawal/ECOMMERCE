@@ -14,9 +14,7 @@ const Smpromo = () => {
           to=""
           className="
         animate__animated animate__heartBeat animate__infinite"
-          onClick={() => {
-            window.open(`https://wa.link/hn7dp7`, `_blank`);
-          }}
+          onClick={() => {}}
         >
           SHOP NOW
         </NavLink>

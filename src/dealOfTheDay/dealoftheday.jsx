@@ -49,12 +49,7 @@ const Dealoftheday = () => {
                   {price}
                   <span className="prices">{actualPrice}</span>
                 </h2>
-                <button
-                  className="btn"
-                  onClick={() => {
-                    window.open(`https://wa.link/hn7dp7`, `_blank`);
-                  }}
-                >
+                <button className="btn" onClick={() => {}}>
                   ADD TO CART
                 </button>
                 <div className="stat">
