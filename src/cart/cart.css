@@ -1,0 +1,145 @@
+.cartCon {
+  margin: 20px 0;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+}
+.link {
+  justify-self: center;
+  color: white;
+  background: rgb(255, 146, 153);
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  width: fit-content;
+}
+.cart .name {
+  background: rgb(0, 0, 0, 0.05);
+  padding: 24px 24px;
+  width: 96%;
+  color: black;
+  font-size: 36px;
+  margin-bottom: 38px;
+}
+.cart .titles {
+  width: 75%;
+  display: grid;
+  grid-template-columns: 37.5% 10% 25% 15% 12.5%;
+  margin: 0 12.5%;
+  margin-bottom: 22px;
+  opacity: 0.7;
+  border-bottom: 2px solid rgb(0, 0, 0, 0.2);
+}
+.titles .h3 {
+  text-align: center;
+}
+.cart .list {
+  width: 75%;
+  display: grid;
+  grid-template-columns: 37.5% 10% 25% 15% 12.5%;
+  margin: 22px 12.5%;
+}
+.cart .items {
+  display: flex;
+  text-align: center;
+  column-gap: 5px;
+}
+.items .itemPre {
+  width: 16%;
+  object-fit: cover;
+}
+
+.cart .quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: center;
+  font-weight: bold;
+  width: 20%;
+}
+.cart .price {
+  color: rgb(255, 143, 156);
+  text-align: center;
+}
+.cart .subtotal {
+  text-align: center;
+}
+.cart .dlt {
+  text-align: start;
+  cursor: pointer;
+  text-align: center;
+}
+.cart .controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 12.5%;
+  width: 75%;
+  border-top: 2px solid rgb(0, 0, 0, 0.2);
+  padding: 30px 0;
+}
+.controls .btn1,
+.controls .btn2 {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.controls .btn1 {
+  background: rgb(255, 143, 156);
+}
+.controls .btn2 {
+  background: rgb(0, 0, 0);
+  background: red;
+}
+.orderBox {
+  width: 30%;
+  border: 2px solid rgb(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin-left: 58%;
+}
+.orderBox .detail {
+  border-bottom: 2px solid rgb(0, 0, 0, 0.2);
+  padding: 20px 0;
+  width: 75%;
+  margin: 0 12.5%;
+}
+.orderBox .detail1,
+.orderBox .detail2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.detail1 .info,
+.detail1 .fee {
+  margin: 10px 0 0 0;
+  font-weight: bold;
+}
+
+.detail2 .info,
+.detail2 .fee {
+  margin: 10px 0 2px 0;
+}
+.cart .total {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 12.5%;
+  font-weight: bold;
+  font-size: 22px;
+}
+.checkout {
+  width: 30.5%;
+  background: rgb(255, 146, 153);
+  color: white;
+  border-radius: 5px;
+  margin-left: 58%;
+  border: none;
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: 12px;
+  margin-bottom: 80px;
+  padding: 7px 0;
+  cursor: pointer;
+}

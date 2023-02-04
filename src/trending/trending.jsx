@@ -2,13 +2,25 @@ import "./trending.css";
 import trending from "../trending.json";
 
 const Trending = () => {
+  const moreInfo = (id) => {
+    localStorage.setItem(`productId`, id);
+    localStorage.setItem(`productType`, `trending`);
+    window.open(`/dashboard/products`, "_self");
+  };
+
   return (
     <div className="trending">
       <h3 className="h3">Trending</h3>
       {trending.map((each) => {
         const { name, writeUp, price, actualPrice, id, image } = each;
         return (
-          <div className="info" key={id}>
+          <div
+            className="info"
+            key={id}
+            onClick={() => {
+              moreInfo(id);
+            }}
+          >
             <img src={image} alt="bestSellerImg" className="img" />
             <div className="moreInfo">
               <p className="p">{name}</p>

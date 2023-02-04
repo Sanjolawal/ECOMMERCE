@@ -1,6 +1,7 @@
 .trending {
   margin-left: 100px;
   width: 100%;
+  cursor: pointer;
 }
 
 .trending .h3 {
@@ -40,7 +41,7 @@
   font-weight: bold;
 }
 
-@media all and (max-width:1300px) {
+@media all and (max-width: 1300px) {
   .trending {
     margin-left: 0;
   }

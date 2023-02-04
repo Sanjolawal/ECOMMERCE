@@ -1,10 +1,12 @@
 import "./mobileMenu.css";
 import { NavLink } from "react-router-dom";
 import { useEffect, useRef } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Mobilemenu = (props) => {
   const { name, state } = props;
   const remove = useRef();
+  const { loginWithRedirect, logout } = useAuth0();
 
   useEffect(() => {
     if (location.pathname === `/dashboard`) {
@@ -34,35 +36,34 @@ const Mobilemenu = (props) => {
         >
           HOME
         </NavLink>
-        <NavLink
-          to="/login"
-          title="Login"
+        <button
+          onClick={() => {
+            if (location.pathname === `/dashboard`) {
+              return logout({
+                logoutParams: { returnTo: window.location.origin },
+              });
+            }
+            return loginWithRedirect();
+          }}
           className={
             location.pathname === `/dashboard`
-              ? ``
-              : `animate__animated animate__heartBeat animate__infinite`
+              ? `btn`
+              : `animate__animated animate__heartBeat animate__infinite btn`
           }
-          onClick={() => {
-            name();
-          }}
         >
           {location.pathname === `/dashboard` ? `LOGOUT` : `LOGIN`}
-        </NavLink>
-        <NavLink
-          to="/login"
-          title="Signup"
+        </button>
+        <button
+          onClick={() => loginWithRedirect()}
           className={
             location.pathname === `/dashboard`
-              ? ``
-              : `animate__animated animate__heartBeat animate__infinite`
+              ? `btn`
+              : `animate__animated animate__heartBeat animate__infinite btn`
           }
-          onClick={() => {
-            name();
-          }}
           ref={remove}
         >
           {location.pathname === `/dashboard` ? `` : `SIGNUP`}
-        </NavLink>
+        </button>
         <a title="Categories">CATEGORIES</a>
         <a title="Mens's">MEN'S</a>
         <a title="Women's">WOMEN'S</a>

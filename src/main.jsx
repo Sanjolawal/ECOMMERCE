@@ -2,15 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-
-//  <ion-icon name="trash-outline"></ion-icon>
-//   <ion-icon name="chevron-down-outline"></ion-icon>
-// <ion-icon name="star"></ion-icon>;
+import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Auth0Provider
+        domain="dev-nlwsjf4mdv6nl8rf.us.auth0.com"
+        clientId="liF98v7fXrdn0IIT0gwNOKOsNVPMQ2Fb"
+        authorizationParams={{
+          redirect_uri: `https://ecommercesample-mmlp.onrender.com/dashboard`,
+        }}
+      >
+        <App />
+      </Auth0Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

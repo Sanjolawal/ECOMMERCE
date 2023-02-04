@@ -12,41 +12,48 @@ import Newproduct from "../newproduct/newproduct";
 import Trending from "../trending/trending";
 import Dealoftheday from "../dealOfTheDay/dealoftheday";
 import Footer from "../footer/footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MobileNavbar from "../mobileNavbar/mobileNavbar";
 import Mobilemenu from "../mobileMenu/mobileMenu";
+import { useAuth0 } from "@auth0/auth0-react";
 import "./dashboard.css";
 
 const Dashboard = () => {
   const [first, setfirst] = useState(false);
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
   const changeState = () => {
     setfirst(!first);
   };
 
-  return (
-    <div className="dashboard">
-      <Mobilemenu name={changeState} state={first} />
-      <Promo />
-      <Header />
-      <Menus />
-      <Carousel />
-      <div className="products">
-        <BestSellers />
-        <Newproduct />
-        <Trending />
+  if (isAuthenticated) {
+    return (
+      <div className="dashboard">
+        <Mobilemenu name={changeState} state={first} />
+        <Promo />
+        <Header />
+        <Menus />
+        <Carousel />
+        <div className="products">
+          <BestSellers />
+          <Newproduct />
+          <Trending />
+        </div>
+        <Dealoftheday />
+        <div className="container">
+          <Testimonial />
+          <Smpromo />
+          <Services />
+        </div>
+        <Blog />
+        <Footer />
+        <MobileNavbar name={changeState} state={first} />
       </div>
-      <Dealoftheday />
-      <div className="container">
-        <Testimonial />
-        <Smpromo />
-        <Services />
-      </div>
-      <Blog />
-      <Footer />
-      <MobileNavbar name={changeState} state={first} />
-    </div>
-  );
+    );
+  }
+  if (!isLoading) {
+    window.open(`http://127.0.0.1:5173`, "_self");
+  }
 };
 
 export default Dashboard;
