@@ -12,6 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         clientId="liF98v7fXrdn0IIT0gwNOKOsNVPMQ2Fb"
         authorizationParams={{
           redirect_uri: `https://ecommercesample-mmlp.onrender.com/dashboard`,
+          // redirect_uri: `http://127.0.0.1:5173/dashboard`,
         }}
       >
         <App />

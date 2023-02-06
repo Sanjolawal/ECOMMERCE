@@ -1,7 +1,20 @@
 import "./bestSellers.css";
-import bestSellers from "../bestsellers.json";
+import { useEffect, useState } from "react";
 
 const BestSellers = () => {
+  const [response, setresponse] = useState([]);
+  useEffect(() => {
+    const bestSellerFecther = async () => {
+      const responseObject = await fetch(
+        `https://ecommercesample-mmlp.onrender.com/api/bestseller`
+      );
+      const response = await responseObject.json();
+      console.log(response);
+      setresponse(response);
+    };
+    bestSellerFecther();
+  }, []);
+
   const moreInfo = (id) => {
     localStorage.setItem(`productId`, id);
     localStorage.setItem(`productType`, `bestSellers`);
@@ -11,7 +24,7 @@ const BestSellers = () => {
   return (
     <div className="bestSeller">
       <h3 className="h3">BEST SELLERS</h3>
-      {bestSellers.map((each) => {
+      {response.map((each) => {
         const { name, writeUp, price, actualPrice, id, image } = each;
         return (
           <div
