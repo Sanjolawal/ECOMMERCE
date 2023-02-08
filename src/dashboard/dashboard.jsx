@@ -52,8 +52,7 @@ const Dashboard = () => {
     );
   }
   if (!isLoading) {
-    // window.open(`http://127.0.0.1:5173`, "_self");
-    window.open(`https://ecommercesample-mmlp.onrender.com`, "_self");
+    window.open(`https://ladieswear.onrender.com`, "_self");
   }
 };
 

@@ -5,9 +5,7 @@ const BestSellers = () => {
   const [response, setresponse] = useState([]);
   useEffect(() => {
     const bestSellerFecther = async () => {
-      const responseObject = await fetch(
-        `https://ecommercesample-mmlp.onrender.com/api/bestseller`
-      );
+      const responseObject = await fetch(`/api/bestseller`);
       const response = await responseObject.json();
       console.log(response);
       setresponse(response);
