@@ -1,5 +1,5 @@
 import "./dealoftheday.css";
-import dealoftheday from "../dealOfTheDay.json";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -8,6 +8,16 @@ import "swiper/css";
 import { Autoplay } from "swiper";
 
 const Dealoftheday = () => {
+  const [response, setresponse] = useState([]);
+  useEffect(() => {
+    const dealofthedayFecther = async () => {
+      const responseObject = await fetch(`/api/dealoftheday`);
+      const response = await responseObject.json();
+      setresponse(response);
+    };
+    dealofthedayFecther();
+  }, []);
+
   return (
     <div className="dealoftheDay">
       <h2 className="h2">Deal of the Day</h2>
@@ -21,7 +31,7 @@ const Dealoftheday = () => {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {dealoftheday.map((each) => {
+        {response.map((each) => {
           const {
             name,
             shortInfo,

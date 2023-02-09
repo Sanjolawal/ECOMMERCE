@@ -1,7 +1,17 @@
 import "./trending.css";
-import trending from "../trending.json";
+import { useEffect, useState } from "react";
 
 const Trending = () => {
+  const [response, setresponse] = useState([]);
+  useEffect(() => {
+    const trendingFecther = async () => {
+      const responseObject = await fetch(`/api/trending`);
+      const response = await responseObject.json();
+      setresponse(response);
+    };
+    trendingFecther();
+  }, []);
+
   const moreInfo = (id) => {
     localStorage.setItem(`productId`, id);
     localStorage.setItem(`productType`, `trending`);
@@ -11,7 +21,7 @@ const Trending = () => {
   return (
     <div className="trending">
       <h3 className="h3">Trending</h3>
-      {trending.map((each) => {
+      {response.map((each) => {
         const { name, writeUp, price, actualPrice, id, image } = each;
         return (
           <div

@@ -7,7 +7,6 @@ const BestSellers = () => {
     const bestSellerFecther = async () => {
       const responseObject = await fetch(`/api/bestseller`);
       const response = await responseObject.json();
-      console.log(response);
       setresponse(response);
     };
     bestSellerFecther();

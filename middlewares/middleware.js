@@ -7,7 +7,7 @@ import dealoftheday from "../schemas/dealofthedaySchema.js";
 const bestsellers = async (req, res) => {
   try {
     const response = await bestseller.find({}).lean();
-    res.status(400).json(response);
+    res.status(200).json(response);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
@@ -15,7 +15,7 @@ const bestsellers = async (req, res) => {
 const products = async (req, res) => {
   try {
     const response = await product.find({}).lean();
-    res.status(400).json(response);
+    res.status(200).json(response);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
@@ -23,7 +23,7 @@ const products = async (req, res) => {
 const dealofthedays = async (req, res) => {
   try {
     const response = await dealoftheday.find({}).lean();
-    res.status(400).json(response);
+    res.status(200).json(response);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
@@ -31,7 +31,7 @@ const dealofthedays = async (req, res) => {
 const trendings = async (req, res) => {
   try {
     const response = await trending.find({}).lean();
-    res.status(400).json(response);
+    res.status(200).json(response);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
@@ -39,7 +39,7 @@ const trendings = async (req, res) => {
 const blogs = async (req, res) => {
   try {
     const response = await blog.find({}).lean();
-    res.status(400).json(response);
+    res.status(200).json(response);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }

@@ -1,11 +1,21 @@
 import "./blog.css";
-import blog from "../blog.json";
+import { useEffect, useState } from "react";
 
 const Blog = () => {
+  const [response, setresponse] = useState([]);
+  useEffect(() => {
+    const blogFecther = async () => {
+      const responseObject = await fetch(`/api/blog`);
+      const response = await responseObject.json();
+      setresponse(response);
+    };
+    blogFecther();
+  }, []);
+
   return (
     <div>
       <div className="blogCon">
-        {blog.map((each) => {
+        {response.map((each) => {
           const { title, head, name, time, id, image } = each;
           return (
             <div className="eachImg" key={id}>

@@ -1,7 +1,17 @@
 import "./newproduct.css";
-import products from "../products.json";
+import { useEffect, useState } from "react";
 
 const Newproduct = () => {
+  const [response, setresponse] = useState([]);
+  useEffect(() => {
+    const newproductFecther = async () => {
+      const responseObject = await fetch(`/api/product`);
+      const response = await responseObject.json();
+      setresponse(response);
+    };
+    newproductFecther();
+  }, []);
+
   const moreInfo = (id) => {
     localStorage.setItem(`productId`, id);
     localStorage.setItem(`productType`, `newproduct`);
@@ -11,7 +21,7 @@ const Newproduct = () => {
   return (
     <div className="newProducts">
       <h3 className="h3">New Arrivals</h3>
-      {products.map((each) => {
+      {response.map((each) => {
         const { name, writeUp, price, actualPrice, id, image } = each;
         return (
           <div
