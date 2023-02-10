@@ -14,6 +14,7 @@ const Server = async () => {
   try {
     const connection = await mongoose.connect(process.env.uri);
     console.log(`Connected to Database`);
+    app.use(express.json());
     app.use(router);
     app.use(express.static("dist"));
 

@@ -12,6 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         clientId="liF98v7fXrdn0IIT0gwNOKOsNVPMQ2Fb"
         authorizationParams={{
           redirect_uri: `https://ladieswear.onrender.com/dashboard`,
+          // redirect_uri: `http://localhost:5000/dashboard`,
         }}
       >
         <App />

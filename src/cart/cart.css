@@ -1,3 +1,9 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
 .cartCon {
   margin: 20px 0;
   width: 100%;
@@ -142,4 +148,99 @@
   margin-bottom: 80px;
   padding: 7px 0;
   cursor: pointer;
+}
+
+@media all and (max-width: 1250px) {
+  .cart .titles {
+    width: 90%;
+    margin-left: 5.5%;
+    margin-right: 0;
+  }
+  .cart .list {
+    width: 90%;
+    margin-left: 5.5%;
+    margin-right: 0;
+  }
+  .cart .controls {
+    width: 90%;
+    margin-left: 5.5%;
+    margin-right: 0;
+  }
+  .orderBox,
+  .checkout {
+    width: 40%;
+    margin-left: 48%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .orderBox,
+  .checkout {
+    width: 50%;
+    margin-left: 38%;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .cart .titles {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 0;
+  }
+  .cart .list {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 0;
+  }
+  .cart .controls {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 0;
+  }
+  .orderBox,
+  .checkout {
+    width: 70%;
+    margin-left: 28%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .cart .titles {
+    display: none;
+  }
+
+  .cart .list {
+    grid-template-columns: 74% 14% 12%;
+  }
+  .list .quantity {
+    display: none;
+  }
+  .list .price {
+    display: none;
+  }
+  .list .dlt {
+    justify-self: end;
+  }
+  .orderBox,
+  .checkout {
+    width: 90%;
+    margin-left: 8%;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .cart .titles {
+    margin-left: 4%;
+  }
+  .cart .list {
+    margin-left: 4%;
+  }
+  .cart .controls {
+    margin-left: 4%;
+  }
+  .orderBox,
+  .checkout {
+    width: 70%;
+    margin-left: 28%;
+  }
 }

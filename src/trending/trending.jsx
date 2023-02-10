@@ -1,8 +1,11 @@
 import "./trending.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Trending = () => {
   const [response, setresponse] = useState([]);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const trendingFecther = async () => {
       const responseObject = await fetch(`/api/trending`);
@@ -15,7 +18,7 @@ const Trending = () => {
   const moreInfo = (id) => {
     localStorage.setItem(`productId`, id);
     localStorage.setItem(`productType`, `trending`);
-    window.open(`/dashboard/products`, "_self");
+    navigate("/dashboard/products");
   };
 
   return (

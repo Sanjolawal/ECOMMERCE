@@ -3,11 +3,22 @@ import "./cart.css";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import MobileNavbar from "../mobileNavbar/mobileNavbar";
 
 const Cart = () => {
-  const [first, setfirst] = useState(false);
-  if (!first) {
+  const [response, setresponse] = useState([]);
+
+  useEffect(() => {
+    const cartfetch = async () => {
+      const responseObject = await fetch(`/api/cart`);
+      const response = await responseObject.json();
+      setresponse(response);
+    };
+    cartfetch();
+  }, []);
+
+  if (response.length > 0) {
     return (
       <div className="cart">
         <Header />
@@ -19,62 +30,25 @@ const Cart = () => {
           <h3 className="h3">SUBTOTAL</h3>
           <h3 className="h3">DELETE</h3>
         </div>
-        <div className="list">
-          <div className="items">
-            <img
-              src="
-            https://codewithsadee.github.io/anon-ecommerce-website/assets/images/products/sports-3.jpg"
-              alt=""
-              className="itemPre"
-            />
-            <p className="p">Women's party wear shoes</p>
-          </div>
-          <p className="price">$49.00</p>
-          <p className="quantity">
-            <span className="negative">-</span>
-            <span className="number">0</span>
-            <span className="positive">+</span>
-          </p>
-          <p className="subtotal">$238.00</p>
-          <p className="dlt"> ❌</p>
-        </div>
-        <div className="list">
-          <div className="items">
-            <img
-              src="
-            https://codewithsadee.github.io/anon-ecommerce-website/assets/images/products/clothes-4.jpg"
-              alt=""
-              className="itemPre"
-            />
-            <p className="p">Women's party wear shoes</p>
-          </div>
-          <p className="price">$49.00</p>
-          <p className="quantity">
-            <span className="negative">-</span>
-            <span className="number">0</span>
-            <span className="positive">+</span>
-          </p>
-          <p className="subtotal">$238.00</p>
-          <p className="dlt"> ❌</p>
-        </div>
-        <div className="list">
-          <div className="items">
-            <img
-              src="
-            https://codewithsadee.github.io/anon-ecommerce-website/assets/images/products/2.jpg"
-              alt=""
-              className="itemPre"
-            />
-            <p className="p">Men's Hoodies T-Shirt</p>
-          </div>
-          <p className="price">$49.00</p>
-          <p className="quantity">
-            <span className="negative">-</span>
-            <span className="number">0</span>
-            <span className="positive">+</span>
-          </p>
-          <p className="subtotal">$238.00</p>
-          <p className="dlt"> ❌</p>
+        <div>
+          {response.map((each) => {
+            return (
+              <div className="list">
+                <div className="items">
+                  <img src={each.image} alt="" className="itemPre" />
+                  <p className="p">{each.name}</p>
+                </div>
+                <p className="price">{each.price}</p>
+                <p className="quantity">
+                  <span className="negative">-</span>
+                  <span className="number">{each.count}</span>
+                  <span className="positive">+</span>
+                </p>
+                <p className="subtotal">$238.00</p>
+                <p className="dlt"> ❌</p>
+              </div>
+            );
+          })}
         </div>
 
         <div className="controls">
@@ -99,6 +73,7 @@ const Cart = () => {
         </div>
         <button className="checkout">Checkout Now</button>
         <Footer />
+        <MobileNavbar />
       </div>
     );
   }

@@ -1,8 +1,11 @@
 import "./bestSellers.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const BestSellers = () => {
   const [response, setresponse] = useState([]);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const bestSellerFecther = async () => {
       const responseObject = await fetch(`/api/bestseller`);
@@ -15,7 +18,7 @@ const BestSellers = () => {
   const moreInfo = (id) => {
     localStorage.setItem(`productId`, id);
     localStorage.setItem(`productType`, `bestSellers`);
-    window.open(`/dashboard/products`, "_self");
+    navigate("/dashboard/products");
   };
 
   return (

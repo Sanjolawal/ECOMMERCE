@@ -1,8 +1,11 @@
 import "./newproduct.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Newproduct = () => {
   const [response, setresponse] = useState([]);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const newproductFecther = async () => {
       const responseObject = await fetch(`/api/product`);
@@ -15,7 +18,7 @@ const Newproduct = () => {
   const moreInfo = (id) => {
     localStorage.setItem(`productId`, id);
     localStorage.setItem(`productType`, `newproduct`);
-    window.open(`/dashboard/products`, "_self");
+    navigate("/dashboard/products");
   };
 
   return (
