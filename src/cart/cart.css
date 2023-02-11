@@ -85,9 +85,11 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 .controls .btn1 {
   background: rgb(255, 143, 156);
+  font-size: 14px;
 }
 .controls .btn2 {
   background: rgb(0, 0, 0);

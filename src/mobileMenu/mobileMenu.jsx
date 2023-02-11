@@ -9,10 +9,10 @@ const Mobilemenu = (props) => {
   const { loginWithRedirect, logout } = useAuth0();
 
   useEffect(() => {
-    if (location.pathname === `/dashboard`) {
-      remove.current.style.display = `none`;
-    } else {
+    if (location.pathname === `/`) {
       remove.current.style.display = `block`;
+    } else {
+      remove.current.style.display = `none`;
     }
     return () => {};
   });
@@ -38,31 +38,31 @@ const Mobilemenu = (props) => {
         </NavLink>
         <button
           onClick={() => {
-            if (location.pathname === `/dashboard`) {
-              return logout({
-                logoutParams: { returnTo: window.location.origin },
-              });
+            if (location.pathname === `/`) {
+              return loginWithRedirect();
             }
-            return loginWithRedirect();
+            return logout({
+              logoutParams: { returnTo: window.location.origin },
+            });
           }}
           className={
-            location.pathname === `/dashboard`
-              ? `btn`
-              : `animate__animated animate__heartBeat animate__infinite btn`
+            location.pathname === `/`
+              ? `animate__animated animate__heartBeat animate__infinite btn`
+              : `btn`
           }
         >
-          {location.pathname === `/dashboard` ? `LOGOUT` : `LOGIN`}
+          {location.pathname === `/` ? `LOGIN` : `LOGOUT`}
         </button>
         <button
           onClick={() => loginWithRedirect()}
           className={
-            location.pathname === `/dashboard`
-              ? `btn`
-              : `animate__animated animate__heartBeat animate__infinite btn`
+            location.pathname === `/`
+              ? `animate__animated animate__heartBeat animate__infinite btn`
+              : `btn`
           }
           ref={remove}
         >
-          {location.pathname === `/dashboard` ? `` : `SIGNUP`}
+          {location.pathname === `/` ? `SIGNUP` : ``}
         </button>
         <a title="Categories">CATEGORIES</a>
         <a title="Mens's">MEN'S</a>

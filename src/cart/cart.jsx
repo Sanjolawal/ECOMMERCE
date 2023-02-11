@@ -5,9 +5,15 @@ import Footer from "../footer/footer";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MobileNavbar from "../mobileNavbar/mobileNavbar";
+import Mobilemenu from "../mobileMenu/mobileMenu";
 
 const Cart = () => {
   const [response, setresponse] = useState([]);
+  const [first, setfirst] = useState(false);
+
+  const changeState = () => {
+    setfirst(!first);
+  };
 
   useEffect(() => {
     const cartfetch = async () => {
@@ -21,6 +27,7 @@ const Cart = () => {
   if (response.length > 0) {
     return (
       <div className="cart">
+        <Mobilemenu name={changeState} state={first} />
         <Header />
         <div className="name">Products / Cart</div>
         <div className="titles">
@@ -52,7 +59,9 @@ const Cart = () => {
         </div>
 
         <div className="controls">
-          <button className="btn1">Continue Shopping</button>
+          <Link to="/dashboard" className="btn1">
+            Continue Shopping
+          </Link>
           <button className="btn2">Clear Shopping Cart</button>
         </div>
         <div className="orderBox">
@@ -73,7 +82,7 @@ const Cart = () => {
         </div>
         <button className="checkout">Checkout Now</button>
         <Footer />
-        <MobileNavbar />
+        <MobileNavbar name={changeState} state={first} />
       </div>
     );
   }

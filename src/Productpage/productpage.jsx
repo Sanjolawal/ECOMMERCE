@@ -5,11 +5,17 @@ import "./productpage.css";
 import Footer from "../footer/footer";
 import { Link, useNavigate } from "react-router-dom";
 import MobileNavbar from "../mobileNavbar/mobileNavbar";
+import Mobilemenu from "../mobileMenu/mobileMenu";
 
 const Productpage = () => {
   let [count, setcount] = useState(1);
   const [response, setresponse] = useState([]);
+  const [first, setfirst] = useState(false);
   const navigate = useNavigate();
+
+  const changeState = () => {
+    setfirst(!first);
+  };
 
   useEffect(() => {
     if (productType === `bestSellers`) {
@@ -80,6 +86,7 @@ const Productpage = () => {
     const { actualPrice, name, writeUp, image, price } = product[0];
     return (
       <div className="product">
+        <Mobilemenu name={changeState} state={first} />
         <Header />
         <div className="name">Products / {name}</div>
         <Link to="/dashboard" className="goBack">
@@ -133,7 +140,7 @@ const Productpage = () => {
           </div>
         </div>
         <Footer />
-        <MobileNavbar />
+        <MobileNavbar name={changeState} state={first} />
       </div>
     );
   }
@@ -147,6 +154,7 @@ const Productpage = () => {
     const { actualPrice, name, writeUp, image, price } = product[0];
     return (
       <div className="product">
+        <Mobilemenu name={changeState} state={first} />
         <Header />
         <div className="name">Products / {name}</div>
         <Link className="goBack" to="/dashboard">
@@ -200,7 +208,7 @@ const Productpage = () => {
           </div>
         </div>
         <Footer />
-        <MobileNavbar />
+        <MobileNavbar name={changeState} state={first} />
       </div>
     );
   }
@@ -267,7 +275,8 @@ const Productpage = () => {
           </div>
         </div>
         <Footer />
-        <MobileNavbar />
+        <Mobilemenu name={changeState} state={first} />
+        <MobileNavbar name={changeState} state={first} />
       </div>
     );
   }
