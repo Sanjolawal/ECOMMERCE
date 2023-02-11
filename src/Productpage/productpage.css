@@ -1,10 +1,9 @@
 .product .name {
   background: rgb(0, 0, 0, 0.05);
   padding: 24px 24px;
-  width: 100%;
   color: black;
   font-size: 36px;
-  margin-bottom: 38px;
+  margin-bottom: 48px;
 }
 .product .goBack {
   color: white;
@@ -81,9 +80,6 @@
   }
 }
 @media all and (max-width: 900px) {
-  .product .name {
-    width: 96%;
-  }
   .productCon {
     grid-template-columns: repeat(1, 70%);
     justify-self: center;
