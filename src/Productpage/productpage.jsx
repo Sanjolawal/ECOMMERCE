@@ -59,6 +59,7 @@ const Productpage = () => {
   };
 
   const toCart = async (name, actualPrice, count, image) => {
+    const totalPrice = Number(actualPrice.split(`$`)[1]) * count;
     const sendingData = await fetch(`/api/cart`, {
       method: `POST`,
       headers: {
@@ -69,6 +70,7 @@ const Productpage = () => {
         price: actualPrice,
         count: count,
         image: image,
+        total: totalPrice,
       }),
     });
     navigate(`/dashboard/cart`);

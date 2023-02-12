@@ -30,6 +30,13 @@
 .iconsCon .contain {
   display: flex;
   align-items: start;
+  color: black;
+}
+.contain .icon {
+  color: black;
+}
+.iconsCon .a {
+  color: black;
 }
 .contain .sup {
   background: rgb(255, 146, 153);

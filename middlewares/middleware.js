@@ -48,7 +48,6 @@ const blogs = async (req, res) => {
 const carts = async (req, res) => {
   try {
     const data = req.body;
-    console.log(data);
     const response = await cart.create(data);
     res.status(200).json({ msg: `created successfully` });
   } catch (error) {
@@ -63,6 +62,23 @@ const allCart = async (req, res) => {
     res.status(500).json({ msg: error.message });
   }
 };
+const deleteCart = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await cart.findByIdAndDelete(id);
+    res.status(200).json({ msg: `deleted successfully` });
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
+  }
+};
+const deleteAllCart = async (req, res) => {
+  try {
+    await cart.deleteMany({});
+    res.status(200).json({ msg: `deleted sucessfully` });
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
+  }
+};
 
 const middlewares = [
   bestsellers,
@@ -72,6 +88,8 @@ const middlewares = [
   trendings,
   carts,
   allCart,
+  deleteCart,
+  deleteAllCart,
 ];
 
 export default middlewares;

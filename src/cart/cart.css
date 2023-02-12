@@ -68,6 +68,7 @@
   text-align: start;
   cursor: pointer;
   text-align: center;
+  background: transparent;
 }
 .cart .controls {
   display: flex;

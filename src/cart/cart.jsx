@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MobileNavbar from "../mobileNavbar/mobileNavbar";
 import Mobilemenu from "../mobileMenu/mobileMenu";
+import { useRef } from "react";
 
 const Cart = () => {
   const [response, setresponse] = useState([]);
+  const [total, settotal] = useState(0);
   const [first, setfirst] = useState(false);
 
   const changeState = () => {
@@ -19,10 +21,45 @@ const Cart = () => {
     const cartfetch = async () => {
       const responseObject = await fetch(`/api/cart`);
       const response = await responseObject.json();
+
+      const allTotal = response.map((each) => {
+        return each.total;
+      });
+
+      const totalPrice = allTotal.reduce((a, b) => a + b, 0);
       setresponse(response);
+      settotal(totalPrice);
     };
     cartfetch();
   }, []);
+
+  const Delete = async (_id) => {
+    console.log(_id);
+    await fetch(`/api/cart/${_id}`, {
+      method: `DELETE`,
+    });
+
+    const responseObject = await fetch(`/api/cart`);
+    const response = await responseObject.json();
+
+    const allTotal = response.map((each) => {
+      return each.total;
+    });
+
+    const totalPrice = allTotal.reduce((a, b) => a + b, 0);
+    setresponse(response);
+    settotal(totalPrice);
+  };
+
+  const DeleteAll = async (_id) => {
+    await fetch(`/api/cart`, {
+      method: `DELETE`,
+    });
+
+    const responseObject = await fetch(`/api/cart`);
+    const response = await responseObject.json();
+    setresponse(response);
+  };
 
   if (response.length > 0) {
     return (
@@ -39,8 +76,9 @@ const Cart = () => {
         </div>
         <div>
           {response.map((each) => {
+            const { _id } = each;
             return (
-              <div className="list">
+              <div className="list" key={_id}>
                 <div className="items">
                   <img src={each.image} alt="" className="itemPre" />
                   <p className="p">{each.name}</p>
@@ -51,8 +89,15 @@ const Cart = () => {
                   <span className="number">{each.count}</span>
                   <span className="positive">+</span>
                 </p>
-                <p className="subtotal">$238.00</p>
-                <p className="dlt"> ❌</p>
+                <p className="subtotal">{`$${each.total}`}</p>
+                <p
+                  className="dlt"
+                  onClick={() => {
+                    Delete(_id);
+                  }}
+                >
+                  ❌
+                </p>
               </div>
             );
           })}
@@ -62,13 +107,20 @@ const Cart = () => {
           <Link to="/dashboard" className="btn1">
             Continue Shopping
           </Link>
-          <button className="btn2">Clear Shopping Cart</button>
+          <button
+            className="btn2"
+            onClick={() => {
+              DeleteAll();
+            }}
+          >
+            Clear Shopping Cart
+          </button>
         </div>
         <div className="orderBox">
           <div className="detail">
             <div className="detail1">
               <p className="info">Subtotal:</p>
-              <p className="fee">$1800</p>
+              <p className="fee">{`$${total}`}</p>
             </div>
             <div className="detail2">
               <p className="info">Shipping Fee:</p>
@@ -77,7 +129,7 @@ const Cart = () => {
           </div>
           <div className="total">
             <p className="info">Order Total:</p>
-            <p className="fee">$1869.28</p>
+            <p className="fee">{`$${total + 5.34}`}</p>
           </div>
         </div>
         <button className="checkout">Checkout Now</button>

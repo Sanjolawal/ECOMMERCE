@@ -1,7 +1,21 @@
 import React from "react";
 import "./header.css";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [first, setfirst] = useState(0);
+
+  useEffect(() => {
+    const cartfetch = async () => {
+      const responseObject = await fetch(`/api/cart`);
+      const response = await responseObject.json();
+      const value = response.length;
+      setfirst(value);
+    };
+    cartfetch();
+  }, []);
+
   return (
     <div className="header">
       <h1 className="h1">SANJO</h1>
@@ -19,10 +33,10 @@ const Header = () => {
           <ion-icon name="heart-outline" class="icon"></ion-icon>
           <sup className="sup">0</sup>
         </div>
-        <div className="contain">
+        <Link className="contain" to="/dashboard/cart">
           <ion-icon name="bag-handle-outline" class="icon"></ion-icon>
-          <sup className="sup">0</sup>
-        </div>
+          <sup className="sup">{first}</sup>
+        </Link>
       </div>
     </div>
   );
