@@ -10,7 +10,8 @@ const [
   carts,
   allCart,
   deleteCart,
-  deleteAllCart
+  deleteAllCart,
+  cartSession,
 ] = middlewares;
 
 router.get(`/api/bestseller`, bestsellers);
@@ -20,5 +21,6 @@ router.get(`/api/dealoftheday`, dealofthedays);
 router.get(`/api/trending`, trendings);
 router.route(`/api/cart`).post(carts).get(allCart).delete(deleteAllCart);
 router.route(`/api/cart/:id`).delete(deleteCart);
+router.route("/create-payment-intent").post(cartSession);
 
 export default router;

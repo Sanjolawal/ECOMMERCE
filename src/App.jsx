@@ -4,6 +4,7 @@ import Dashboard from "./dashboard/dashboard";
 import Error from "./Error/error";
 import Productpage from "./Productpage/productpage";
 import Cart from "./cart/cart";
+import Checkout from "./checkout/checkout";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/products" element={<Productpage />} />
         <Route path="/dashboard/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MobileNavbar from "../mobileNavbar/mobileNavbar";
 import Mobilemenu from "../mobileMenu/mobileMenu";
-import { useRef } from "react";
+
 
 const Cart = () => {
   const [response, setresponse] = useState([]);
@@ -60,6 +60,17 @@ const Cart = () => {
     const response = await responseObject.json();
     setresponse(response);
   };
+
+  // const stripe = async () => {
+  //   const responseObject = await fetch("/create-payment-intent", {
+  //     method: `POST`,
+  //   });
+  //   const response = await responseObject.json();
+  //   // window.location.replace(response.clientSecret);
+  //   console.log(response.clientSecret);
+  // };
+
+ 
 
   if (response.length > 0) {
     return (
@@ -132,7 +143,9 @@ const Cart = () => {
             <p className="fee">{`$${total + 5.34}`}</p>
           </div>
         </div>
-        <button className="checkout">Checkout Now</button>
+        <Link to="/checkout" className="checkout">
+          Checkout Now
+        </Link>
         <Footer />
         <MobileNavbar name={changeState} state={first} />
       </div>
