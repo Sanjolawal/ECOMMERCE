@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   PaymentElement,
   LinkAuthenticationElement,
@@ -30,7 +31,9 @@ const CheckoutForm = () => {
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
-          setMessage("Payment succeeded!");
+          setMessage(
+            "Payment succeeded!, Thanks for your payment, your order will be reviewed shortly"
+          );
           break;
         case "processing":
           setMessage("Your payment is processing.");
@@ -60,7 +63,7 @@ const CheckoutForm = () => {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:5000",
+        return_url: "http://localhost:5000/checkout",
       },
     });
 
@@ -77,21 +80,52 @@ const CheckoutForm = () => {
     layout: "tabs",
   };
 
+  const msg =
+    "Payment succeeded!, Thanks for your payment, your order will be reviewed shortly";
+
+  if (message === msg) {
+    const DeleteAll = async () => {
+      await fetch(`/api/cart`, {
+        method: `DELETE`,
+      });
+    };
+    DeleteAll();
+  }
+
+  if (message) {
+    return (
+      <div id="payment-message" className="formCon">
+        <div>
+          <p>{message}</p>
+          <Link to="/dashboard" className="msgLink">
+            Go back to dashboard
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
-      <LinkAuthenticationElement
-        id="link-authentication-element"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <button disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
-        </span>
-      </button>
-      {/* Show any error or success messages */}
-      {message && <div id="payment-message">{message}</div>}
-    </form>
+    <div className="formCon">
+      <form id="payment-form" onSubmit={handleSubmit}>
+        <LinkAuthenticationElement
+          id="link-authentication-element"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <PaymentElement id="payment-element" options={paymentElementOptions} />
+        <button disabled={isLoading || !stripe || !elements} id="submit">
+          <span id="button-text">
+            {isLoading ? (
+              <div className="spinner" id="spinner"></div>
+            ) : (
+              "Pay now"
+            )}
+          </span>
+        </button>
+        {/* Show any error or success messages */}
+        {message && <div id="payment-message">{message}</div>}
+      </form>
+    </div>
   );
 };
 

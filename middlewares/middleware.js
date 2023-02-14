@@ -102,14 +102,14 @@ const cartSession = async (req, res) => {
 
     // Create a PaymentIntent with the order amount and currency
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 2000,
+      amount: 4000,
       currency: "usd",
       automatic_payment_methods: {
         enabled: true,
       },
     });
 
-    res.status(400).json({
+    res.status(200).json({
       clientSecret: paymentIntent.client_secret,
     });
   } catch (e) {

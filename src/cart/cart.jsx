@@ -51,7 +51,7 @@ const Cart = () => {
     settotal(totalPrice);
   };
 
-  const DeleteAll = async (_id) => {
+  const DeleteAll = async () => {
     await fetch(`/api/cart`, {
       method: `DELETE`,
     });

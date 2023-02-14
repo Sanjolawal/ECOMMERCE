@@ -140,11 +140,12 @@
   margin-left: 58%;
   border: none;
   font-weight: bold;
-  font-size: 17px;
-  margin-top: 12px;
+  font-size: 14px;
+  margin-top: 32px;
   margin-bottom: 80px;
-  padding: 7px 0;
+  padding: 10px 14px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 @media all and (max-width: 1250px) {
