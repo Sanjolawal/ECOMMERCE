@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import MobileNavbar from "../mobileNavbar/mobileNavbar";
 import Mobilemenu from "../mobileMenu/mobileMenu";
 
-
 const Cart = () => {
   const [response, setresponse] = useState([]);
   const [total, settotal] = useState(0);
@@ -69,8 +68,6 @@ const Cart = () => {
   //   // window.location.replace(response.clientSecret);
   //   console.log(response.clientSecret);
   // };
-
- 
 
   if (response.length > 0) {
     return (
@@ -143,9 +140,11 @@ const Cart = () => {
             <p className="fee">{`$${total + 5.34}`}</p>
           </div>
         </div>
-        <Link to="/checkout" className="checkout">
-          Checkout Now
-        </Link>
+        <div className="checkout">
+          <Link to="/checkout" className="checkoutLink">
+            Checkout Now
+          </Link>
+        </div>
         <Footer />
         <MobileNavbar name={changeState} state={first} />
       </div>

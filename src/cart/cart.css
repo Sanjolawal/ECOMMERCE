@@ -133,19 +133,23 @@
   font-size: 22px;
 }
 .checkout {
-  width: 30.5%;
+  width: 30%;
   background: rgb(255, 146, 153);
-  color: white;
   border-radius: 5px;
   margin-left: 58%;
   border: none;
-  font-weight: bold;
-  font-size: 14px;
-  margin-top: 32px;
+  margin-top: 16px;
   margin-bottom: 80px;
-  padding: 10px 14px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.checkout .checkoutLink {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 3px 0px;
   text-decoration: none;
+  color: white;
 }
 
 @media all and (max-width: 1250px) {
