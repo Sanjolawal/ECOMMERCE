@@ -7,13 +7,20 @@ const MobileNavbar = (props) => {
   const [first, setfirst] = useState(0);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const cartfetch = async () => {
-      const responseObject = await fetch(`/api/cart`);
+      const responseObject = await fetch(`/api/cart`, { signal });
       const response = await responseObject.json();
       const value = response.length;
       setfirst(value);
     };
     cartfetch();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return (

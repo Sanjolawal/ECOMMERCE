@@ -10,12 +10,19 @@ import { Autoplay } from "swiper";
 const Dealoftheday = () => {
   const [response, setresponse] = useState([]);
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const dealofthedayFecther = async () => {
-      const responseObject = await fetch(`/api/dealoftheday`);
+      const responseObject = await fetch(`/api/dealoftheday`, { signal });
       const response = await responseObject.json();
       setresponse(response);
     };
     dealofthedayFecther();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return (

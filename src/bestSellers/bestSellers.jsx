@@ -7,12 +7,19 @@ const BestSellers = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const bestSellerFecther = async () => {
-      const responseObject = await fetch(`/api/bestseller`);
+      const responseObject = await fetch(`/api/bestseller`, { signal });
       const response = await responseObject.json();
       setresponse(response);
     };
     bestSellerFecther();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   const moreInfo = (id) => {

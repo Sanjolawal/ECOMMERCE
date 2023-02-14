@@ -17,8 +17,11 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const cartfetch = async () => {
-      const responseObject = await fetch(`/api/cart`);
+      const responseObject = await fetch(`/api/cart`, { signal });
       const response = await responseObject.json();
 
       const allTotal = response.map((each) => {
@@ -30,6 +33,10 @@ const Cart = () => {
       settotal(totalPrice);
     };
     cartfetch();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   const Delete = async (_id) => {
@@ -59,15 +66,6 @@ const Cart = () => {
     const response = await responseObject.json();
     setresponse(response);
   };
-
-  // const stripe = async () => {
-  //   const responseObject = await fetch("/create-payment-intent", {
-  //     method: `POST`,
-  //   });
-  //   const response = await responseObject.json();
-  //   // window.location.replace(response.clientSecret);
-  //   console.log(response.clientSecret);
-  // };
 
   if (response.length > 0) {
     return (

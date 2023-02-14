@@ -7,12 +7,19 @@ const Trending = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const trendingFecther = async () => {
-      const responseObject = await fetch(`/api/trending`);
+      const responseObject = await fetch(`/api/trending`, { signal });
       const response = await responseObject.json();
       setresponse(response);
     };
     trendingFecther();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   const moreInfo = (id) => {

@@ -4,12 +4,19 @@ import { useEffect, useState } from "react";
 const Blog = () => {
   const [response, setresponse] = useState([]);
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const blogFecther = async () => {
-      const responseObject = await fetch(`/api/blog`);
+      const responseObject = await fetch(`/api/blog`, { signal });
       const response = await responseObject.json();
       setresponse(response);
     };
     blogFecther();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return (

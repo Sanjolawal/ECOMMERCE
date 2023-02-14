@@ -7,12 +7,19 @@ const Newproduct = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const newproductFecther = async () => {
-      const responseObject = await fetch(`/api/product`);
+      const responseObject = await fetch(`/api/product`, { signal });
       const response = await responseObject.json();
       setresponse(response);
     };
     newproductFecther();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   const moreInfo = (id) => {

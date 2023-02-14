@@ -18,27 +18,38 @@ const Productpage = () => {
   };
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
     if (productType === `bestSellers`) {
       const bestSellerFecther = async () => {
-        const responseObject = await fetch(`/api/bestseller`);
+        const responseObject = await fetch(`/api/bestseller`, { signal });
         const response = await responseObject.json();
         setresponse(response);
       };
       bestSellerFecther();
+      return () => {
+        controller.abort();
+      };
     } else if (productType === `trending`) {
       const trendingFecther = async () => {
-        const responseObject = await fetch(`/api/trending`);
+        const responseObject = await fetch(`/api/trending`, { signal });
         const response = await responseObject.json();
         setresponse(response);
       };
       trendingFecther();
+      return () => {
+        controller.abort();
+      };
     } else {
       const productFecther = async () => {
-        const responseObject = await fetch(`/api/product`);
+        const responseObject = await fetch(`/api/product`, { signal });
         const response = await responseObject.json();
         setresponse(response);
       };
       productFecther();
+      return () => {
+        controller.abort();
+      };
     }
   }, []);
 
