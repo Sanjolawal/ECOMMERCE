@@ -1,4 +1,3 @@
-## [Demo](https://sanjo-ecommerce-demo.netlify.app/)
 ## Back-end of a medical app called Dalil
 
 ## What it is
