@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "concurrently \"nodemon app.js\" \"npm run build\" ",
-    "open": "nodemon app.js"
+    "start": "concurrently \"node app.js\" \"npm run build\" ",
+    "open": "node app.js"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.0.0",
