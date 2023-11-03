@@ -17,7 +17,7 @@ Please register for the full experience.
 * expressJs
 
 ## Technologies Used
-* JavaScript (ES5)
+* Reactjs
 * NodeJs
 * ExpressJs
 * Mongoose
