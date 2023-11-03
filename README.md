@@ -9,6 +9,13 @@ Please view the end result here: https://ladieswear.onrender.com/
 
 Please register for the full experience.
 
+## Programming languages used
+* Html5
+* CSS 3
+* JavaScript
+* Nodejs
+* expressJs
+
 ## Technologies Used
 * JavaScript (ES5)
 * NodeJs
